@@ -1,0 +1,47 @@
+menu "Area check-in hardware configuration"
+config CHECKIN_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+config CHECKIN_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default ""
+config CHECKIN_MQTT_URI
+    string "MQTT broker URI (mqtt:// or mqtts://)"
+    default "mqtt://192.168.1.100:1883"
+config CHECKIN_MQTT_USERNAME
+    string "MQTT username"
+    default ""
+config CHECKIN_MQTT_PASSWORD
+    string "MQTT password"
+    default ""
+config CHECKIN_DEVICE_ID
+    string "Device ID (empty derives from MAC)"
+    default ""
+config CHECKIN_NTP_SERVER
+    string "NTP server"
+    default "pool.ntp.org"
+config CHECKIN_SDA
+    int "DS3231 SDA GPIO"
+    range 0 48
+    default 8
+config CHECKIN_SCL
+    int "DS3231 SCL GPIO"
+    range 0 48
+    default 9
+config CHECKIN_BUTTON_IN
+    int "Check-in GPIO (active low)"
+    range 0 48
+    default 4
+config CHECKIN_BUTTON_OUT
+    int "Check-out GPIO (active low)"
+    range 0 48
+    default 5
+config CHECKIN_ADC_CHANNEL
+    int "ADC1 channel (GPIO = channel + 1 on S3)"
+    range 0 9
+    default 0
+config CHECKIN_DB_REFERENCE_MV
+    int "Calibrated peak-to-peak millivolts at 94 dB"
+    range 1 3000
+    default 1000
+endmenu
